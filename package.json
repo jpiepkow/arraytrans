@@ -1,0 +1,18 @@
+{
+  "name": "arraytrans",
+  "version": "0.0.6",
+  "description": "Do complex array transformation based on substrings to change order of array or remove values",
+  "main": "transform.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array",
+    "transform"
+  ],
+  "author": "jordan l piepkow",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
