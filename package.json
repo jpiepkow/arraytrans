@@ -11,6 +11,7 @@
     "transform"
   ],
   "author": "jordan l piepkow",
+  "url": "https://github.com/jpiepkow/arraytrans"
   "license": "ISC",
   "dependencies": {
     "underscore": "^1.8.3"
