@@ -63,15 +63,23 @@ var transform = {
     remove: function (array, remObject, base) {
         if (remObject.include) {
             return array.filter(function (n) {
-                if (n.indexOf(base) === -1 || n.indexOf(base) != -1 && _.contains(remObject.include, n)) {
-                    return n;
+                var returnThis = false;
+                substringloop(n,remObject.include,function(r) {
+                    if (n.indexOf(base) != -1 && r ===true || n.indexOf(base) === -1  ) {
+                    returnThis = true
                 }
+            });
+                    if(returnThis === true) {return n};
             })
         } else if (remObject.exclude) {
             return array.filter(function (n) {
-                if (n.indexOf(base) === -1 || n.indexOf(base) != -1 && !_.contains(remObject.exclude, n)) {
-                    return n;
+                var returnThis = false;
+                substringloop(n,remObject.exclude,function(r) {
+                    if (n.indexOf(base) != -1 && r ===false || n.indexOf(base) === -1  ) {
+                    returnThis = true
                 }
+            });
+                    if(returnThis === true) {return n};
             })
         } else {
             return array;
@@ -79,3 +87,22 @@ var transform = {
     }
 };
 module.exports = transform;
+
+var substringloop = function(value,object,callback) {
+       var index = 0;
+        var deleteIt = false;
+    var loopIT = function(index) {
+        if(value.indexOf(object[index]) != -1){
+            deleteIt = true;
+              return callback(true)
+        }
+        if(index != object.length) {
+            index++;
+            loopIT(index);
+        } else {
+              return callback(deleteIt);
+        }
+    };
+    loopIT(index);
+
+};
