@@ -2,6 +2,8 @@ Array Transform
 ==
 Description: This module is used to do complex array transformations based on substrings to change the order of an array or remove values.
 
+*Latest version includes delete off substring and not exact value.
+
 	npm install arraytrans --save
 	
 	
@@ -90,5 +92,18 @@ Remove Method requires:
   	'basestring.araythree.three' ]
   	
 	=================================
+  	 	 
+ 	  	console.log(arrayTrans.remove(testArr,{exclude:['basestring.arrayone','basestring.arraythree.one']},'basestring'));
   	
+  	//OUTPUT=========================
+  	
+  	[ 'nobase1',
+  	'nobase2',
+  	'basestring.arraytwo.one',
+  	'basestring.arraytwo.two',
+  	'basestring.arraytwo.three',
+  	'basestring.arraythree.two',
+  	'basestring.araythree.three' ]
+  	
+	=================================
   	
