@@ -1,6 +1,6 @@
 {
   "name": "arraytrans",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Do complex array transformation based on substrings to change order of array or remove values",
   "main": "transform.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "transform"
   ],
   "author": "jordan l piepkow",
-  "url": "https://github.com/jpiepkow/arraytrans",
+  "repository":{
+    "type":"git",
+    "url": "https://github.com/jpiepkow/arraytrans"
+  },
   "license": "ISC",
   "dependencies": {
     "underscore": "^1.8.3"
